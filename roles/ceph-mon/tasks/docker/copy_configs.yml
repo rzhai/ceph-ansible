@@ -85,7 +85,7 @@
     chcon -Rt svirt_sandbox_file_t {{ item }}
   with_items:
     - "{{ ceph_conf_key_directory }}"
-    - /var/lib/ceph
+    - "{{ ceph_directories }}"
   changed_when: false
   when:
     - ansible_os_family == 'RedHat'
